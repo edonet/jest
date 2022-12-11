@@ -1,6 +1,5 @@
 {
   "exclude": ["./dist", "node_modules"],                      // 排除目录
-  "include": ["./src"],
   "compilerOptions": {
     "target": "es2018",                                       // 指定ECMAScript目标版本
     "lib": ["es2018"],                                        // 使用`es6`类型库
@@ -15,7 +14,7 @@
     "noImplicitAny": true,                                    // 禁用`any`类型
     "allowJs": true,                                          // 允许加载`js`文件
     "noEmit": false,                                          // 不生成输出文件
-    "jsx": "preserve",                                        // 指定`jsx`类型
+    "jsx": "react-jsx",                                       // 指定`jsx`类型
     "isolatedModules": true,                                  // 将每个文件作为单独
     "resolveJsonModule": true,                                // 解析`json`文件为模块的模块
     "forceConsistentCasingInFileNames": true,                 // 禁止对同一个文件的不一致的引用

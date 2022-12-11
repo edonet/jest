@@ -1,0 +1,4 @@
+{
+  "include": ["./src"],                                       // 编译目录
+  "extends": "./tsconfig.json",                               // 编译配置
+}

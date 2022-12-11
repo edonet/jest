@@ -12,17 +12,7 @@
  *****************************************
  */
 import { Config } from 'jest';
-import { resolve } from 'path';
-
-
-/**
- *****************************************
- * 当前目录
- *****************************************
- */
-function dir(path: string) {
-  return resolve(__dirname, path);
-}
+import { dir, root } from './fs';
 
 
 /**
@@ -32,18 +22,16 @@ function dir(path: string) {
  */
 export const config: Config = {
   rootDir: process.cwd(),
-  roots: ['<rootDir>/test/'],
+  roots: root('test', 'packages'),
   testMatch: ['**/?(*.)(spec|test).(ts|tsx|js|jsx)'],
-  testEnvironment: 'jsdom',
-  testEnvironmentOptions: {
-    url: 'http://localhost/',
-  },
   transform: {
-    '\\.(ts|tsx|js|jsx)$': dir('./transform/tsTransform.js'),
+    '\\.(ts|js)$': dir('./transform/tsTransform.js'),
+    '\\.(tsx|jsx)$': dir('./transform/tsxTransform.js'),
     '\\.(scss|css|less|sass)$': dir('./transform/cssTransform.js'),
     '\\.(html|tpl)$': dir('./transform/rawTransform.js'),
     '^(?!.*\\.(ts|tsx|js|jsx|css|json)$)': dir('./transform/fileTransform.js'),
   },
+  passWithNoTests: true,
   watchPathIgnorePatterns: ['\\.temp(\\..*)?'],
   moduleNameMapper: {
     '^vue$': 'vue/dist/vue.common.prod.js',
