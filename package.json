@@ -1,0 +1,36 @@
+{
+  "name": "@ainc/jest",
+  "version": "0.1.0",
+  "description": "Jest preset with Typescript and React!",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "jest": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "tsc",
+    "build": "yarn compile",
+    "watch": "yarn compile --watch",
+    "compile": "tsc",
+    "clean": "rm -rf ./dist",
+    "prepublishOnly": "yarn build",
+    "test": "node ./bin/cli.js"
+  },
+  "lazy": true,
+  "sideEffects": false,
+  "repository": "",
+  "author": "edonet@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "@jest/globals": "^29.3.1",
+    "esbuild": "^0.16.4",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1"
+  },
+  "devDependencies": {
+    "@ainc/eslint-config-recommended": "^0.1.0"
+  }
+}
