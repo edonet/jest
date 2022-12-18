@@ -1,6 +1,6 @@
 {
   "name": "@ainc/jest",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Jest preset with Typescript and React!",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
