@@ -11,7 +11,28 @@
  * 加载依赖
  *****************************************
  */
+import { Config } from 'jest';
 import { config } from './config';
+
+
+/**
+ *****************************************
+ * 可等待对象
+ *****************************************
+ */
+type Awaitable<T> = T | Promise<T>;
+
+
+/**
+ *****************************************
+ * 定义配置
+ *****************************************
+ */
+export function defineConfig(handler?: (config: Config) => Awaitable<void | Config>): () => Awaitable<Config> {
+  return () => {
+    return (handler && handler(config) || config) as Awaitable<Config>;
+  };
+}
 
 
 /**

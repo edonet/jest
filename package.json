@@ -8,7 +8,7 @@
     "dist"
   ],
   "bin": {
-    "jest": "./bin/cli.js"
+    "ajest": "./bin/cli.js"
   },
   "scripts": {
     "start": "tsc",
