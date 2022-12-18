@@ -1,14 +1,15 @@
 {
   "name": "@ainc/jest",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Jest preset with Typescript and React!",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "files": [
+    "bin",
     "dist"
   ],
   "bin": {
-    "ajest": "./bin/cli.js"
+    "jest": "./bin/cli.js"
   },
   "scripts": {
     "start": "tsc",
