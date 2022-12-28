@@ -36,6 +36,8 @@ export function process(code: string, source: string) {
     target: 'es2020',
     format: 'cjs',
     loader: extname(source).slice(1) as Loader,
+    sourcemap: 'inline',
+    sourcefile: source,
   });
 }
 
